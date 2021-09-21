@@ -1,0 +1,69 @@
+{
+  "name": "@side/code-coverage-action",
+  "version": "0.0.0-development",
+  "description": "Github action for commenting and uploading code coverage",
+  "author": "Side Inc.",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "engines": {
+    "node": ">=14"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "format": "prettier --write **/*.ts",
+    "format-check": "prettier --check **/*.ts",
+    "lint": "eslint src/**/*.ts",
+    "build": "rimraf dist && ncc build src/index.ts --source-map --license licenses.txt",
+    "test": "yarn tsc && jest"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/exec": "^1.0.4",
+    "@actions/github": "^5.0.0",
+    "js-yaml": "^4.0.0",
+    "lcov-parse": "^1.0.0",
+    "semver": "^7.3.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@octokit/plugin-rest-endpoint-methods": "^5.10.4",
+    "@octokit/webhooks": "^9.15.0",
+    "@side/commitlint-config": "^0.1.6",
+    "@side/eslint-config-base": "^0.12.0",
+    "@side/eslint-config-jest": "^0.3.4",
+    "@tsconfig/node14": "1.0.1",
+    "@types/jest": "^27.0.1",
+    "@types/js-yaml": "^4.0.3",
+    "@types/node": "^16.9.4",
+    "@types/semver": "^7.3.8",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
+    "@vercel/ncc": "0.31.1",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsdoc": "^36.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "7.0.2",
+    "jest": "27.2.1",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.4.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.0.5",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  },
+  "lint-staged": {
+    "*.{json,md}": [
+      "prettier --write"
+    ],
+    "*.js": [
+      "eslint --fix"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reside-eng/code-coverage-action.git"
+  }
+}

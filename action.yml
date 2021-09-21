@@ -1,0 +1,13 @@
+name: 'code-coverage-action'
+description: 'An action for commenting and uploading code coverage'
+author: 'Side Inc.'
+inputs:
+  working-directory:
+    required: false
+    description: 'Current working directory'
+  output-file:
+    required: false
+    description: 'Path for output json file'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
