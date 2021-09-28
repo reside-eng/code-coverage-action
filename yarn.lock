@@ -775,10 +775,10 @@
     "@octokit/types" "^6.0.3"
     universal-user-agent "^6.0.0"
 
-"@octokit/openapi-types@^10.2.2":
-  version "10.2.2"
-  resolved "https://registry.yarnpkg.com/@octokit/openapi-types/-/openapi-types-10.2.2.tgz#6c1c839d7d169feabaf1d2a69c79439c75d979cd"
-  integrity sha512-EVcXQ+ZrC04cg17AMg1ofocWMxHDn17cB66ZHgYc0eUwjFtxS0oBzkyw2VqIrHBwVgtfoYrq1WMQfQmMjUwthw==
+"@octokit/openapi-types@^10.6.1":
+  version "10.6.1"
+  resolved "https://registry.yarnpkg.com/@octokit/openapi-types/-/openapi-types-10.6.1.tgz#4eb303e7da4de3d17216db80e3be6309f03b9fcc"
+  integrity sha512-53YKy8w8+sHQhUONhTiYt6MqNqPolejYr6rK/3VOevpORAIYGQEX2pmXnnhgdSsjHy176e5ZBgVt0ppOGziS7g==
 
 "@octokit/plugin-paginate-rest@^2.13.3":
   version "2.16.3"
@@ -787,12 +787,12 @@
   dependencies:
     "@octokit/types" "^6.28.1"
 
-"@octokit/plugin-rest-endpoint-methods@^5.1.1", "@octokit/plugin-rest-endpoint-methods@^5.10.4":
-  version "5.10.4"
-  resolved "https://registry.yarnpkg.com/@octokit/plugin-rest-endpoint-methods/-/plugin-rest-endpoint-methods-5.10.4.tgz#97e85eb7375e30b9bf193894670f9da205e79408"
-  integrity sha512-Dh+EAMCYR9RUHwQChH94Skl0lM8Fh99auT8ggck/xTzjJrwVzvsd0YH68oRPqp/HxICzmUjLfaQ9sy1o1sfIiA==
+"@octokit/plugin-rest-endpoint-methods@^5.1.1", "@octokit/plugin-rest-endpoint-methods@^5.11.3":
+  version "5.11.3"
+  resolved "https://registry.yarnpkg.com/@octokit/plugin-rest-endpoint-methods/-/plugin-rest-endpoint-methods-5.11.3.tgz#d3b01fafb4a64bf7da4e3852f969cb65293e78ae"
+  integrity sha512-E19gqHqfP3uJa2/hx6Abhx2NrVP5tsNbst2/AeqGxlGM+eL4N8fRbzhd+NEIsGAB4y3R7e9kVE0y8OOghlXUXw==
   dependencies:
-    "@octokit/types" "^6.28.1"
+    "@octokit/types" "^6.31.1"
     deprecation "^2.3.1"
 
 "@octokit/request-error@^2.0.2", "@octokit/request-error@^2.0.5", "@octokit/request-error@^2.1.0":
@@ -816,12 +816,12 @@
     node-fetch "^2.6.1"
     universal-user-agent "^6.0.0"
 
-"@octokit/types@^6.0.3", "@octokit/types@^6.16.1", "@octokit/types@^6.28.1":
-  version "6.28.1"
-  resolved "https://registry.yarnpkg.com/@octokit/types/-/types-6.28.1.tgz#ab990d1fe952226055e81c7650480e6bacfb877c"
-  integrity sha512-XlxDoQLFO5JnFZgKVQTYTvXRsQFfr/GwDUU108NJ9R5yFPkA2qXhTJjYuul3vE4eLXP40FA2nysOu2zd6boE+w==
+"@octokit/types@^6.0.3", "@octokit/types@^6.16.1", "@octokit/types@^6.28.1", "@octokit/types@^6.31.1":
+  version "6.31.1"
+  resolved "https://registry.yarnpkg.com/@octokit/types/-/types-6.31.1.tgz#223d062778bb6121635a022d3bf545d506fcc880"
+  integrity sha512-xkF46eaYcpT8ieO78mZWhMq3bt37zIsP5BUkN+zWgX+mTYDB7jOtUP1MOxcSF8hhJhsjjlB1YDgQAhX0z0oqPw==
   dependencies:
-    "@octokit/openapi-types" "^10.2.2"
+    "@octokit/openapi-types" "^10.6.1"
 
 "@octokit/webhooks-methods@^2.0.0":
   version "2.0.0"
