@@ -6396,7 +6396,9 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const github_1 = __nccwpck_require__(438);
 const core_1 = __nccwpck_require__(186);
 /**
+ * Get Github Rest Client
  *
+ * @returns Github Rest client
  */
 function getRestClient() {
     const octokit = (0, github_1.getOctokit)((0, core_1.getInput)('github-token'));
