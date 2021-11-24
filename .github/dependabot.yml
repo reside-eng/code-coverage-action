@@ -10,6 +10,10 @@ updates:
       - "reside-eng/platform"
     reviewers:
       - "reside-eng/platform"
+    commit-message:
+      prefix: fix
+      prefix-development: chore
+      include: scope
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -18,3 +22,6 @@ updates:
       - "reside-eng/platform"
     reviewers:
       - "reside-eng/platform"
+    commit-message:
+      prefix: chore
+      include: scope
