@@ -2,47 +2,29 @@ name: Verify
 
 on: [pull_request]
 
+env:
+  NODE_VERSION: 14.x
+
 jobs:
   build:
     name: Build and Test
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     if: github.actor != 'dependabot[bot]'
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-        node-version: [14.x]
     steps:
-      - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.9.1
-        with:
-          access_token: ${{ github.token }}
-
       - name: Checkout Code
         uses: actions/checkout@v2.3.4
 
-      - name: Use Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
+      - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v2.4.1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'yarn'
 
       - name: Configure Package Manager
         run: |
           echo Configuring NPM_READ_TOKEN globally for .npmrc
           npm config set '//registry.npmjs.org/:_authToken' ${{ secrets.NPM_READ_TOKEN }}
           npm whoami
-
-      - name: Get yarn cache directory path
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
-
-      - uses: actions/cache@v2.1.6
-        # Use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        id: yarn-cache
-        with:
-          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
 
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
@@ -51,10 +33,14 @@ jobs:
         run: yarn lint
 
       - name: Test
+        run: yarn test --coverage
+
+      # TODO: Use code-coverage-action once upload: false is supported
+      - name: Comment test coverage
         uses: raulanatol/jest-coverage-comment-action@v1.1.2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          jest-command: yarn test --coverage --silent
+          use-existing-reports: true
 
       - name: Build
         run: yarn build
