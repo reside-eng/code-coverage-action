@@ -10,7 +10,7 @@ env:
 
 jobs:
   build:
-    name: Build and Verify
+    name: build
     runs-on: ubuntu-latest
     if: github.actor == 'dependabot[bot]'
     steps:
@@ -36,14 +36,12 @@ jobs:
         run: yarn lint
 
       - name: Test
-        run: yarn test --coverage
+        run: yarn test --coverage --coverageReporters="json-summary"
 
-      # TODO: Use code-coverage-action once upload: false is supported
-      - name: Comment test coverage
-        uses: raulanatol/jest-coverage-comment-action@v1.1.2
+      - name: Comment + Report Coverage
+        uses: reside-eng/code-coverage-action@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          use-existing-reports: true
 
       - name: Build
         run: yarn build
