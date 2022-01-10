@@ -25,7 +25,7 @@
     "semver": "^7.3.4"
   },
   "devDependencies": {
-    "@commitlint/cli": "^13.1.0",
+    "@commitlint/cli": "^16.0.2",
     "@octokit/plugin-rest-endpoint-methods": "^5.10.4",
     "@octokit/webhooks": "^9.15.0",
     "@side/commitlint-config": "^0.1.6",
@@ -36,7 +36,7 @@
     "@types/js-yaml": "^4.0.3",
     "@types/node": "^16.9.4",
     "@types/semver": "^7.3.8",
-    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "@vercel/ncc": "0.31.1",
     "eslint": "^7.32.0",
