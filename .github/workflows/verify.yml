@@ -9,7 +9,6 @@ jobs:
   build:
     name: build
     runs-on: ubuntu-latest
-    if: github.actor != 'dependabot[bot]'
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2.3.4
@@ -51,7 +50,7 @@ jobs:
         run: yarn build
 
   notification:
-    if: always() && github.actor != 'dependabot[bot]'
+    if: always()
     name: notification
     needs: [build]
     runs-on: ubuntu-latest
